@@ -19,12 +19,12 @@ const Navbar = ({ theme, setTheme, toggleForm, setIsOpenBenner, setIsOpenProduct
     <div className='navbar'>
       <img src={theme == 'light' ? logo_light : logo_dark} alt="" className='logo' />
       <ul>
-        <li onClick={() => setIsOpenBenner(true)}>Home </li>
+        <li onClick={() => {setIsOpenBenner(true),setIsOpenAbout(false) ,setIsOpenProducts(false) }}>Home </li>
         <li onClick={() => { setIsOpenProducts(true), setIsOpenBenner(false) }} >Products</li>
         <li>Features</li>
         <li onClick={() => {setIsOpenAbout(true) , setIsOpenBenner(false) , setIsOpenProducts(false) }}>About</li>
-        <li onClick={() => toggleForm('login')}>Login</li>
-        <li onClick={() => toggleForm('signup')}>Sign Up</li>
+        <li onClick={() => {toggleForm('login') ,setIsOpenAbout(false) , setIsOpenBenner(false) , setIsOpenProducts(false) }}>Login</li>
+        <li onClick={() => {toggleForm('signup') , setIsOpenAbout(false) , setIsOpenBenner(false) , setIsOpenProducts(false)}}>Sign Up</li>
       </ul>
       <div className='search-box'>
         <input type="text" placeholder='Search' />
